@@ -17,17 +17,6 @@ export default function Skills() {
     mobile: [{ name: "Android", icon: "/android.svg" }],
   };
 
-  const techStack = [
-    { name: "C#", icon: "/csharp.svg" },
-    { name: "jQuery", icon: "/jQuery_dark.svg" },
-    { name: "React", icon: "/React_dark.svg" },
-    { name: "Java", icon: "/java.svg" },
-    { name: "Javascript", icon: "/javascript.svg" },
-    { name: "Tailwind CSS", icon: "/tailwindcss.svg" },
-    { name: "Amazon Web Services (AWS)", icon: "/aws_dark.svg" },
-    { name: "Android", icon: "/android.svg" },
-  ];
-
   return (
     <div className="max-w-7xl mx-auto w-full ">
       <SectionTitle>Skills</SectionTitle>
