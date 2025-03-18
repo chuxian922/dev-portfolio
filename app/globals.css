@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font: Roboto, sans-serif;
 }
 
 @theme inline {
@@ -23,4 +24,122 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  font-family: var(--font);
+  top: 0;
+  /* position: relative; */
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #000000;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: row; */
+  justify-content: space-between;
+}
+
+footer {
+  bottom: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.notepad {
+  /* width: 600px; */
+  min-height: 300px;
+  border: 1px solid #000;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.title-bar {
+  background-color: #c0c0c0;
+  padding: 5px;
+  border-bottom: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-bar span {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+.menu-bar {
+  background-color: #d3d3d3;
+  padding: 5px;
+  border-bottom: 1px solid #000;
+}
+.menu-bar a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+}
+.menu-bar a:hover {
+  text-decoration: underline;
+}
+.content {
+  padding: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  overflow: hidden;
+  white-space: pre-wrap;
+  text-align: justify;
+  border-right: 3px solid #333;
+  animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+.highlight {
+  background-color: #ffff99;
+}
+
+.nav-item {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-item:hover {
+  color: #ffffff;
+}
+
+.gradient-section {
+  background-image: linear-gradient(black, grey);
+}
+
+.contact-svg:hover .svg-path {
+  fill: #0077B5; /* Change to your desired hover color */
+}
+
+.card {
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 5px;
+  background-clip: padding-box;
+  color: black;
+  padding: 10px;
+  box-sizing: border-box;
 }
