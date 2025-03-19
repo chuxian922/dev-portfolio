@@ -1,8 +1,20 @@
 import Image from "next/image";
 import SectionTitle from "./UI/SectionTitle";
 
+type SkillCategory = {
+  name: string;
+  icon: string;
+};
+
+type Skills = {
+  backend: SkillCategory[];
+  frontend: SkillCategory[];
+  cloud: SkillCategory[];
+  mobile: SkillCategory[];
+};
+
 export default function Skills() {
-  const skills: any = {
+  const skills: Skills = {
     backend: [
       { name: "C#.NET", icon: "/csharp.svg" },
       { name: "Java", icon: "/java.svg" },
@@ -25,7 +37,7 @@ export default function Skills() {
           <div key={category} className="card mx-0 mr-5 shadow-2xl w-2xl" style={{ backgroundColor: "#b5b5b5" }}>
             <h2>{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
             <div className="flex flex-wrap gap-5 p-5">
-              {skills[category].map((skill: any) => (
+              {skills[category as keyof Skills].map((skill: SkillCategory) => (
                 <div key={skill.name} className="flex items-center justify-center">
                   <Image src={skill.icon} alt={skill.name} width={50} height={50} title={skill.name} />
                 </div>
